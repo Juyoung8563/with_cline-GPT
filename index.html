@@ -34,27 +34,58 @@
       rel="stylesheet"
     />
     <style>
+      /* Hover effect for destination cards */
+      .destination {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .destination:hover {
+        transform: scale(1.15);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .destinations {
+          flex-direction: column;
+          align-items: center;
+        }
+        .destination {
+          width: 90%;
+        }
+      }
+
       body {
         font-family: "Roboto", sans-serif;
         background-color: rgba(0, 0, 0, 0.897);
         color: white;
         margin: 0;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
       }
       header {
-        background-color: #7b9acc;
-        text-align: center;
-        padding: 2rem 0;
+        width: 65%;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem 1rem;
+        background-image: url(img/background.jpg);
+        background-size: cover;
+        color: white;
       }
       header h1 {
-        color: darkblue;
-        font-size: 3rem;
+        font-size: 5rem;
         display: flex;
         align-items: center;
         justify-content: center;
       }
       header p {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -65,17 +96,19 @@
         flex-wrap: wrap;
         gap: 1.5rem;
         padding: 2rem;
+        max-width: 100%;
       }
       .destination {
         background-color: #282c34;
         border-radius: 8px;
         overflow: hidden;
         text-align: center;
-        width: 300px;
+        width: calc(20% - 1.5rem); /* Allow 5 items per row */
+        min-width: 250px; /* Ensure a minimum width for smaller screens */
       }
       .destination img {
         width: 100%;
-        height: 200px;
+        height: 270px;
         object-fit: cover;
       }
       .destination p {
@@ -83,14 +116,10 @@
         font-size: 1rem;
         font-weight: 500;
       }
-      footer {
-        text-align: center;
-        padding: 1rem 0;
-        background-color: #282c34;
-      }
     </style>
   </head>
   <body>
+    <br />
     <header>
       <br />
       <h1>Discover the World</h1>
@@ -102,7 +131,7 @@
     </header>
 
     <div class="destinations">
-      <div class="destination">
+      <figure class="destination">
         <img src="img/paris.jpg" alt="파리" />
         <p>
           Paris, France <br />
@@ -113,8 +142,8 @@
           River, you'll be immersed in the city's art, romance, and timeless
           charm.
         </p>
-      </div>
-      <div class="destination">
+      </figure>
+      <figure class="destination">
         <img src="img/tokyo.jpg" alt="도쿄" />
         <p>
           Tokyo, Japan <br />
@@ -125,8 +154,8 @@
           vibrant nightlife, and unique cultural experiences, Tokyo is a city
           that never ceases to amaze.
         </p>
-      </div>
-      <div class="destination">
+      </figure>
+      <figure class="destination">
         <img src="img/newyork.jpg" alt="뉴욕" />
         <p>
           New York City, USA <br />
@@ -138,8 +167,8 @@
           of Brooklyn, NYC offers endless opportunities to explore and
           experience.
         </p>
-      </div>
-      <div class="destination">
+      </figure>
+      <figure class="destination">
         <img src="img/rome.jpg" alt="로마" />
         <p>
           Rome, Italy <br />
@@ -150,8 +179,8 @@
           piazzas, world-class cuisine, and rich heritage, Rome offers an
           unforgettable journey through time.
         </p>
-      </div>
-      <div class="destination">
+      </figure>
+      <figure class="destination">
         <img src="img/capetown.jpg" alt="케이프타운" />
         <p>
           Cape Town, South Africa <br />
@@ -163,8 +192,8 @@
           Hope, Cape Town is a gateway to South Africa's rich heritage and
           scenic wonders.
         </p>
-      </div>
-      <div class="destination">
+      </figure>
+      <figure class="destination">
         <img src="img/kyoto.jpg" alt="교토" />
         <p>
           Kyoto, Japan <br />
@@ -176,8 +205,8 @@
           heart of Japan, Kyoto is a perfect blend of natural beauty, history,
           and timeless elegance.
         </p>
-      </div>
-      <div class="destination">
+      </figure>
+      <figure class="destination">
         <img src="img/machupicchu.jpg" alt="마추픽추" />
         <p>
           Machu Picchu, Peru <br />
@@ -189,8 +218,8 @@
           is both a historical marvel and a bucket-list destination for
           travelers worldwide.
         </p>
-      </div>
-      <div class="destination">
+      </figure>
+      <figure class="destination">
         <img src="img/queenstown.png" alt="퀸즈타운" />
         <p>
           Queenstown, New Zealand <br />
@@ -202,8 +231,8 @@
           wineries, and vibrant atmosphere, Queenstown is a must-visit
           destination for nature and adventure lovers alike.
         </p>
-      </div>
-      <div class="destination">
+      </figure>
+      <figure class="destination">
         <img src="img/cairo.png" alt="카이로" />
         <p>
           Cairo, Egypt <br />
@@ -214,8 +243,8 @@
           historic mosques, and lively culture, Cairo offers an unforgettable
           journey through time and tradition.
         </p>
-      </div>
-      <div class="destination">
+      </figure>
+      <figure class="destination">
         <img src="img/princesa.jpg" alt="푸에르토 프린세사" />
         <p>
           Puerto Princesa, Philippines <br />
@@ -227,8 +256,9 @@
           in vibrant coral reefs, and experience the warm hospitality of the
           Palawan locals.
         </p>
-      </div>
+      </figure>
     </div>
+    <br />
 
     <footer>
       <p>&copy; 2025 World Travel Destinations. All Rights Reserved.</p>
